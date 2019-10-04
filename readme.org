@@ -11,3 +11,14 @@ Plot from pipe
 #+BEGIN_SRC 
 ps aux | awk '{print $2}' | cook :plot show
 #+END_SRC
+#+BEGIN_SRC 
+ps aux | awk '{print $2,$3}' | cook :plot show
+#+END_SRC
+Histogram
+#+BEGIN_SRC 
+ps aux | awk '{print $2,$3}' | cook :plot hist
+#+END_SRC
+Kill from ps aux output
+#+BEGIN_SRC 
+ps aux | grep python | cook :proc kill
+#+END_SRC
