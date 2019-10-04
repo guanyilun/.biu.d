@@ -2,17 +2,18 @@ import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
 import sys
-from StringIO import StringIO
 
-def show(recipe):
-    data_str = [l.rstrip() for l in sys.stdin.readlines()]
+def show(recipe, col):
+    lines = sys.stdin.readlines()
     data = []
-    for v in data_str:
+    col = int(col)
+    for l in lines:
+        fields = l.rstrip().split()
         try:
-            float(v)
+            float(fields[col])
         except:
             continue
-        data.append(float(v))
+        data.append(fields[col])
     plt.plot(data)
     plt.show()
 
@@ -31,14 +32,16 @@ def show2d(recipe):
     plt.plot(data)
     plt.show()
 
-def hist(recipe):
-    data_str = [l.rstrip() for l in sys.stdin.readlines()]
+def hist(recipe, col):
+    lines = sys.stdin.readlines()
     data = []
-    for v in data_str:
+    col = int(col)
+    for l in lines:
+        fields = l.rstrip().split()
         try:
-            float(v)
+            float(fields[col])
         except:
             continue
-        data.append(float(v))
+        data.append(fields[col])
     plt.hist(data)
     plt.show()
