@@ -43,5 +43,5 @@ def hist(recipe, col):
         except:
             continue
         data.append(fields[col])
-    plt.hist(data)
+    plt.hist(data, bins=50)
     plt.show()
