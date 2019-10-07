@@ -3,7 +3,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 import sys
 
-def show(recipe, col):
+def show(col):
     lines = sys.stdin.readlines()
     data = []
     col = int(col)
@@ -17,7 +17,7 @@ def show(recipe, col):
     plt.plot(data)
     plt.show()
 
-def show2d(recipe):
+def show2d():
     data_str = [l.rstrip().split() for l in sys.stdin.readlines()]
     print(data_str)
     data = []
@@ -32,7 +32,7 @@ def show2d(recipe):
     plt.plot(data)
     plt.show()
 
-def hist(recipe, col):
+def hist(col):
     lines = sys.stdin.readlines()
     data = []
     col = int(col)

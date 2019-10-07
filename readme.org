@@ -1,24 +1,24 @@
-* cook recipes
-This is (going to be) my collection of recipes, making use of [[https://github.com/abo-abo/cook][cook]]. To install,
+* biu recipes
+This is (going to be) my collection of recipes, making use of [[https://github.com/firslov/biu][biu]]. To install,
 ** Installation
 #+BEGIN_SRC bash
-pip install pycook
-git clone https://github.com/guanyilun/.cook.d ~/.cook.d
+pip install git+https://github.com/firslov/biu
+git clone https://github.com/guanyilun/.biu.d ~/.biu.d
 #+END_SRC
 
 ** Recipes examples
 Plot col 1 from pipe
 #+BEGIN_SRC
-ps aux | cook :plot show 1
+ps aux | biu plot show 1
 #+END_SRC
 #+BEGIN_SRC
-ps aux | awk '{print $2,$3}' | cook :plot show2d
+ps aux | awk '{print $2,$3}' | biu plot show2d
 #+END_SRC
 Histogram
 #+BEGIN_SRC
-ps aux | cook :plot hist 1
+ps aux | biu plot hist 1
 #+END_SRC
 Kill from ps aux output
 #+BEGIN_SRC
-ps aux | grep python | cook :proc kill
+ps aux | grep python | biu proc kill
 #+END_SRC
